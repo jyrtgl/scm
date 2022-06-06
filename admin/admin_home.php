@@ -65,6 +65,7 @@ if (isset($_GET['logout'])) {
 						<a href="admin_home.php?logout='1'" style="color: red;">logout</a>
                        &nbsp; <a href="admin_create_user.php"> + add user</a>
                        &nbsp; <a href="admin_index.php" style="color: orange;">users list</a>
+					   &nbsp; <a href="../staff/product_list.php" style="color: orange;">Product List</a>
 					</small>
 
 				<?php endif ?>

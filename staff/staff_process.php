@@ -28,7 +28,7 @@ if(isset($_POST['save'])){
 
 	$_SESSION['message'] = "Record has been saved!";
     $_SESSION['msg_type'] = "success";
-    header("location: staff_index.php");
+    header("location: product_list.php");
 
 }
 
@@ -40,7 +40,7 @@ if(isset($_GET['delete'])){
 	$_SESSION['message'] = "Record has been deleted!";
     $_SESSION['msg_type'] = "danger";
 
-    header("location: staff_index.php");
+    header("location: product_list.php");
 }
 
 //Edit
@@ -73,7 +73,7 @@ if(isset($_POST['update'])){
 	$_SESSION['message'] = "Record has been updated!";
     $_SESSION['msg_type'] = "warning";
 
-    header("location: staff_index.php");
+    header("location: product_list.php");
 
 }
 
