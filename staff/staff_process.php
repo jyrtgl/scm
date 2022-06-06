@@ -1,5 +1,5 @@
 <?php
-$p_name=$p_price=$num_stocks=$search="";
+$p_name=$p_price=$num_stocks=$p_desc=$p_img=$p_type=$p_status=$search="";
 $id=$rowcount=0;
 $update=false;
 $con=new mysqli('localhost','root','','scm') or die (mysqli_error($mysqli));
@@ -14,7 +14,10 @@ if(isset($_POST['save'])){
 	$p_name=$_POST['p_name'];
 	$p_price=$_POST['p_price'];
 	$num_stocks=$_POST['num_stocks'];
-
+	$p_desc=$_POST['p_desc'];
+	$p_img=$_POST['p_img'];
+	$p_type=$_POST['p_type'];
+	$p_status=$_POST['p_status'];
 
 	// $total=round((($prelim/100)*30)+(($midterm/100)*40)+(($final/100)*30));
 
@@ -24,7 +27,7 @@ if(isset($_POST['save'])){
     //         $remarks="Passed";
     //     }
 
-	$con->query("INSERT INTO inventory(p_name,p_price,num_stocks)VALUES('$p_name','$p_price','$num_stocks')") or die ($con->error());
+	$con->query("INSERT INTO inventory(p_name,p_price,num_stocks,p_desc,p_img,p_type,p_status)VALUES('$p_name','$p_price','$num_stocks','$p_desc','$p_img','$p_type','$p_status')") or die ($con->error());
 
 	$_SESSION['message'] = "Record has been saved!";
     $_SESSION['msg_type'] = "success";
@@ -52,6 +55,10 @@ if(isset($_GET['edit'])){
 	$p_name=$row['p_name'];
 	$p_price=$row['p_price'];
 	$num_stocks=$row['num_stocks'];
+	$p_desc=$row['p_desc'];
+	$p_img=$row['p_img'];
+	$p_type=$row['p_type'];
+	$p_status=$row['p_status'];
 }
 
 //Update
@@ -60,6 +67,10 @@ if(isset($_POST['update'])){
 	$p_name=$_POST['p_name'];
 	$p_price=$_POST['p_price'];
 	$num_stocks=$_POST['num_stocks'];
+	$p_desc=$_POST['p_desc'];
+	$p_img=$_POST['p_img'];
+	$p_type=$_POST['p_type'];
+	$p_status=$_POST['p_status'];
 	// $total=round((($prelim/100)*30)+(($midterm/100)*40)+(($final/100)*30));
 
     //     if($total<75){
@@ -68,7 +79,7 @@ if(isset($_POST['update'])){
     //         $remarks="Passed";
     //     }
 
-	$con->query("UPDATE inventory SET p_name='$p_name', p_price='$p_price', num_stocks='$num_stocks' WHERE id=$id") or die ($con->error());
+	$con->query("UPDATE inventory SET p_name='$p_name', p_price='$p_price', num_stocks='$num_stocks', p_desc='$p_desc', p_img='$p_img', p_type='$p_type', p_status='$p_status' WHERE id=$id") or die ($con->error());
 
 	$_SESSION['message'] = "Record has been updated!";
     $_SESSION['msg_type'] = "warning";

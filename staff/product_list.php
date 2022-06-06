@@ -23,7 +23,7 @@
   <?php
     if(isset($_POST['search'])){
       $search = $_POST['search'];
-      $result=$con->query("SELECT * FROM inventory WHERE p_name LIKE '%$search%' OR p_price LIKE '%$search%' OR num_stocks LIKE '%$search%'") or die ($con->error());
+      $result=$con->query("SELECT * FROM inventory WHERE p_name LIKE '%$search%' OR p_price LIKE '%$search%' OR num_stocks LIKE '%$search%' OR p_desc LIKE '%$search%' OR p_img LIKE '%$search%' OR  p_type LIKE '%$search%' OR  p_status LIKE '%$search%'") or die ($con->error());
   }
   ?>
   <!-- Search -->
@@ -61,6 +61,10 @@
       <label></label>&nbsp;&nbsp;&nbsp;<input type="text" name="p_name" placeholder="Product Name" required value="<?php echo $p_name; ?>"><br>
       <label></label>&nbsp;&nbsp;&nbsp;<input type="number" name="p_price" placeholder="Product Price" required value="<?php echo $p_price; ?>"><br>
       <label></label>&nbsp;&nbsp;&nbsp;<input type="number" name="num_stocks" placeholder="Number of Stocks" required value="<?php echo $num_stocks; ?>"><br>
+      <label></label>&nbsp;&nbsp;&nbsp;<input type="text" name="p_desc" placeholder="Product Description" required value="<?php echo $p_desc; ?>"><br>
+      <label></label>&nbsp;&nbsp;&nbsp;<input type="text" name="p_img" placeholder="Product Image" required value="<?php echo $p_img; ?>"><br>
+      <label></label>&nbsp;&nbsp;&nbsp;<input type="text" name="p_type" placeholder="Product Type" required value="<?php echo $p_type; ?>"><br>
+      <label></label>&nbsp;&nbsp;&nbsp;<input type="text" name="p_status" placeholder="Product Status" required value="<?php echo $p_status; ?>"><br>
     <?php if($update==true){?>
             <button type="submit" name="update" class="btn btn-warning">Update</button>
         <?php }else{ ?>
@@ -81,7 +85,11 @@
         <th>Product Name</th>
         <th>Product Price</th>
         <th>Number of Stocks Available</th>
-        <th colspan="4">Actions</th>
+        <th>Product Description</th>
+        <th>Product Image</th>
+        <th>Product Type</th>
+        <th>Product Status</th>
+        <th colspan="8">Actions</th>
       </tr>
     </thread>
       <?php
@@ -91,7 +99,11 @@
       <?php $rowcount=$rowcount+1; ?>
         <td><?php echo $row['p_name'];?></td>
         <td>₱<?php echo $row['p_price'];?></td>
-        <td><?php echo $row['num_stocks'];?> kilograms</td>
+        <td><?php echo $row['num_stocks'];?> Kilo/s</td>
+        <td><?php echo $row['p_desc'];?></td>
+        <td><?php echo $row['p_img'];?></td>
+        <td><?php echo $row['p_type'];?></td>
+        <td><?php echo $row['p_status'];?></td>
         <td>
                 <a href="product_list.php?edit=<?php echo $row['id'];?>" class="btn btn-primary">Edit</a>
                 <a href="staff_process.php?delete=<?php echo $row['id'];?>" class="btn btn-danger">Delete</a>
