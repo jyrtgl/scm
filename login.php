@@ -30,7 +30,7 @@
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="login_btn">Login</button>
-			<a class="btn btn-secondary active" href="sign_up.php">signup</a>
+			<a class="btn btn-secondary active" href="customer_sign_up.php">signup</a>
 		</div>
 	</form>
 	<!-- Bootstrap -->

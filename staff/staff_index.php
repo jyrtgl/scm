@@ -14,7 +14,7 @@
 </head>
 <body>
   <?php
-    require_once "tprocess.php";
+    require_once "staff_process.php";
   ?>
   <?php
     $result=$con->query("SELECT * FROM inventory")or die($con->error);
@@ -29,7 +29,7 @@
   <!-- Search -->
   <nav class="navbar navbar-dark bg-light">
     <h3><a href="staff.php"><i class="fa fa-home">&nbsp;&nbsp;</i>Inventory</a></h3>
-    <form action="staffindex.php" method="post">
+    <form action="staff_index.php" method="post">
           <div class="form-group">
             <input type="text" placeholder="Search" name="search" value="<?php echo $search; ?>">
             <button type="submit"><i class="fa fa-search"></i></button><br>
@@ -47,7 +47,7 @@
         <hr>
 
 
-  <form action="tprocess.php" method="post">
+  <form action="staff_process.php" method="post">
       <input type="hidden" name="id" value="<?php echo $id; ?>">
       <input type="hidden" name="user_type" id="user_type" value="student">
       <label></label>&nbsp;&nbsp;&nbsp;<input type="text" name="p_name" placeholder="Product Name" required value="<?php echo $p_name; ?>"><br>
@@ -85,8 +85,8 @@
         <td><?php echo $row['p_price'];?></td>
         <td><?php echo $row['num_stocks'];?></td>
         <td>
-                <a href="staffindex.php?edit=<?php echo $row['id'];?>" class="btn btn-primary">Edit</a>
-                <a href="tprocess.php?delete=<?php echo $row['id'];?>" class="btn btn-danger">Delete</a>
+                <a href="staff_index.php?edit=<?php echo $row['id'];?>" class="btn btn-primary">Edit</a>
+                <a href="staff_process.php?delete=<?php echo $row['id'];?>" class="btn btn-danger">Delete</a>
             </td>
       </tr>
         <?php } ?>

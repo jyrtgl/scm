@@ -25,10 +25,10 @@
 </head>
 <body>
 	<div class="header">
-		<h2><a href="home.php" style="color: white;">Admin - create user</a></h2>
+		<h2><a href="admin_home.php" style="color: white;">Admin - create user</a></h2>
 	</div>
 	
-	<form method="post" action="create_user.php">
+	<form method="post" action="admin_create_user.php">
 
 		<?php echo display_error(); ?>
 

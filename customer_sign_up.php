@@ -1,5 +1,5 @@
 <?php 
-	include('sufunctions.php'); 
+	include('customer_functions.php'); 
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,7 +28,7 @@
 		<h2><a href="login.php" style="color: white;">Sign Up</a></h2>
 	</div>
 	
-	<form method="post" action="sign_up.php">
+	<form method="post" action="customer_sign_up.php">
 
 		<?php echo display_error(); ?>
 

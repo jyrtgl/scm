@@ -17,7 +17,7 @@ if(isset($_GET['delete'])){
 	$_SESSION['message'] = "Record has been deleted!";
     $_SESSION['msg_type'] = "danger";
 
-    header("location: adminindex.php");
+    header("location: admin_index.php");
 }
 
 //Edit
@@ -55,7 +55,7 @@ if(isset($_POST['update'])){
 	$_SESSION['message'] = "Record has been updated!";
     $_SESSION['msg_type'] = "warning";
 
-    header("location: adminindex.php");
+    header("location: admin_index.php");
 
 }
 

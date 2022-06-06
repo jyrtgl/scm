@@ -53,7 +53,7 @@
 						<i  style="color: #888;">Contact Number: <?php echo $_SESSION['user']['contact_num']; ?></i>
 						<br>
 						<a href="index.php?logout='1'" style="color: red;">logout</a>
-						&nbsp; <a href="studentindex.php" style="color: orange;">Shop Now</a>
+						&nbsp; <a href="customer_index.php" style="color: orange;">Shop Now</a>
 					</small>
 				<?php endif ?>
 			</div>

@@ -13,7 +13,7 @@
 </head>
 <body>
   <?php
-    require_once "process.php";
+    require_once "admin_process.php";
   ?>
   <?php
     $result=$con->query("SELECT * FROM users")or die($con->error);
@@ -26,8 +26,8 @@
   ?>
   <!-- Search -->
   <nav class="navbar navbar-dark bg-light">
-    <h3><a href="home.php"><i class="fa fa-home">&nbsp;&nbsp;</i>USER LIST</a></h3>
-    <form action="adminindex.php" method="post">
+    <h3><a href="admin_home.php"><i class="fa fa-home">&nbsp;&nbsp;</i>USER LIST</a></h3>
+    <form action="admin_index.php" method="post">
           <div class="form-group">
             <input type="text" placeholder="Search" name="search" value="<?php echo $search; ?>">
             <button type="submit"><i class="fa fa-search"></i></button><br>
@@ -37,7 +37,7 @@
   <!-- End Search -->
   <!-- Input -->
   <div class="row justify-content-center">
-  <form action="process.php" method="post">
+  <form action="admin_process.php" method="post">
     <?php if($update==true){?>
       <input type="hidden" name="id" value="<?php echo $id; ?>">
       <label>Username: </label>&nbsp;&nbsp;&nbsp;<input type="text" name="username" required value="<?php echo $username; ?>"><br>
@@ -106,8 +106,8 @@
         <td><?php echo $row['address'];?></td>
         <td><?php echo $row['contact_num'];?></td>
         <td>
-                <a href="adminindex.php?edit=<?php echo $row['id'];?>" class="btn btn-primary">Edit</a>
-                <a href="process.php?delete=<?php echo $row['id'];?>" class="btn btn-danger">Delete</a>
+                <a href="admin_index.php?edit=<?php echo $row['id'];?>" class="btn btn-primary">Edit</a>
+                <a href="admin_process.php?delete=<?php echo $row['id'];?>" class="btn btn-danger">Delete</a>
             </td>
       </tr>
         <?php } ?>

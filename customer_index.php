@@ -14,7 +14,7 @@
 </head>
 <body>
   <?php
-    require_once "sprocess.php";
+    require_once "customer_process.php";
   ?>
   <?php
     $result=$con->query("SELECT * FROM inventory")or die($con->error);
